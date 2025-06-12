@@ -17,13 +17,18 @@ function appendProduct() {
 
 	if(name !== undefined && name !== "") {
 		if(typeof price == "number" && price > 0) {
-			// Ajoute l'objet au tableau
+			let founded = false;
 
-			// Méthode de base
-			products[products.length] = {name: name, price: price}
+			for(let i = 0; i < products.length; i++) {
+				if(products[i].name === name && products[i].price === price) {
+					founded = true;
+					break;
+				}
+			}
 
-			// Méthode automatise
-			products.push({name: name, price: price})
+			if(founded !== true) {
+				products.push({name: name, price: price})
+			}
 		}
 	}
 	console.log(products)
