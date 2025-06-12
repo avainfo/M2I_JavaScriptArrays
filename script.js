@@ -40,22 +40,26 @@ function appendProduct() {
 	// 	}
 	// }
 
-	if(name !== undefined && name !== "") {
-		if(typeof price == "number" && price > 0) {
-			let founded = false;
+	if(!(name !== undefined && name !== "")) {
+		return
+	}
 
-			for(let i = 0; i < products.length; i++) {
-				if(products[i].name === name && products[i].price === price) {
-					founded = true;
-					break;
-				}
-			}
+	if(!(typeof price == "number" && price > 0)) {
+		return
+	}
 
-			if(founded !== true) {
-				products.push({name: name, price: price})
-			}
+	let founded = false;
+	for(let i = 0; i < products.length; i++) {
+		if(products[i].name === name && products[i].price === price) {
+			founded = true;
+			break;
 		}
 	}
+
+	if(founded !== true) {
+		products.push({name: name, price: price})
+	}
+
 	console.log(products)
 }
 
