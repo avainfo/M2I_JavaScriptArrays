@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Panier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Ajouter un produit</h1>
+
+    <input type="text" id="product-name" placeholder="Nom du produit">
+    <input type="number" id="product-price" placeholder="Prix (€)" min="0" step="0.01">
+    <button id="add-button"
+            onclick="appendProduct()">
+        Ajouter
+    </button>
+
+    <h2>Panier</h2>
+    <ul id="cart-list"></ul>
+
+    <p id="total">Total : 0.00 €</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
